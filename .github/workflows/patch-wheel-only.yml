@@ -1,0 +1,82 @@
+name: Apply 3095 wheel-only compatibility patch
+
+on:
+  push:
+    branches: [main]
+
+permissions:
+  contents: write
+
+jobs:
+  patch:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Apply source changes
+        shell: python
+        run: |
+          from pathlib import Path
+
+          def edit(path, fn):
+              p = Path(path)
+              s = p.read_text(encoding='utf-8-sig')
+              ns = fn(s)
+              if ns == s:
+                  raise SystemExit(f'No change made to {path}; expected source pattern was not found')
+              p.write_text(ns, encoding='utf-8')
+
+          edit('Gears/Memory/MemoryPatcher.hpp', lambda s: s.replace(
+              'namespace MemoryPatcher {\nvoid SetPatterns(int version);',
+              'namespace MemoryPatcher {\nvoid SetPatterns(int version);\nbool WheelOnlyMode();', 1))
+
+          def patch_memory(s):
+              s = s.replace(
+                  'bool Error = false;\n',
+                  'bool Error = false;\n\nbool WheelOnlyModeEnabled = false;\n', 1)
+              s = s.replace(
+                  'void SetPatterns(int version) {\n',
+                  'void SetPatterns(int version) {\n    // GTA b3095 changed the vehicle transmission internals. For newer builds\n    // we intentionally run only the wheel/input/FFB portion of Gears.\n    WheelOnlyModeEnabled = version > G_VER_1_0_2802_0;\n', 1)
+              s = s.replace(
+                  'bool Test() {\n    bool success = true;',
+                  'bool Test() {\n    if (WheelOnlyModeEnabled) {\n        logger.Write(INFO, "[Compat] Wheel-only mode active; skipping legacy memory patch tests");\n        return true;\n    }\n\n    bool success = true;', 1)
+              s = s.replace(
+                  'bool ApplyGearboxPatches() {\n    if (gearboxAttempts > maxAttempts) {',
+                  'bool ApplyGearboxPatches() {\n    if (WheelOnlyModeEnabled) {\n        return true;\n    }\n\n    if (gearboxAttempts > maxAttempts) {', 1)
+              s = s.replace(
+                  'bool PatchSteeringAssist() {\n    return SteeringAssistPatcher.Patch();\n}',
+                  'bool PatchSteeringAssist() {\n    if (WheelOnlyModeEnabled) {\n        return false;\n    }\n    return SteeringAssistPatcher.Patch();\n}', 1)
+              s = s.replace(
+                  'bool PatchSteeringControl() {\n    return SteeringControlPatcher.Patch();\n}',
+                  'bool PatchSteeringControl() {\n    if (WheelOnlyModeEnabled) {\n        return false;\n    }\n    return SteeringControlPatcher.Patch();\n}', 1)
+              s = s.replace(
+                  'bool RestoreThrottleControl() {\n    return ThrottleControlPatcher.Restore();\n}\n}',
+                  'bool RestoreThrottleControl() {\n    return ThrottleControlPatcher.Restore();\n}\n\nbool WheelOnlyMode() {\n    return WheelOnlyModeEnabled;\n}\n}', 1)
+              return s
+          edit('Gears/Memory/MemoryPatcher.cpp', patch_memory)
+
+          def patch_wheel(s):
+              s = s.replace(
+                  '#include "Memory/VehicleExtensions.hpp"\n',
+                  '#include "Memory/VehicleExtensions.hpp"\n#include "Memory/MemoryPatcher.hpp"\n', 1)
+              s = s.replace(
+                  'void WheelInput::CheckButtons() {\n    if (g_controls.PrevInput != CarControls::Wheel) {\n        return;\n    }\n\n    checkVehicleInputButtons();',
+                  'void WheelInput::CheckButtons() {\n    if (g_controls.PrevInput != CarControls::Wheel) {\n        return;\n    }\n\n    // b3095+ uses GTA\'s native transmission. Disable Gears\' custom gearbox\n    // before update_manual_transmission() runs, so wheel pedals use the normal\n    // GTA control path instead of the obsolete memory-backed pedal logic.\n    if (MemoryPatcher::WheelOnlyMode()) {\n        g_settings.MTOptions.Enable = false;\n    }\n\n    checkVehicleInputButtons();', 1)
+              old = '''    if (g_vehData.mClass == VehicleClass::Car) {\n        VExt::SetSteeringInputAngle(g_playerVehicle, -std::clamp(effSteer, -1.0f, 1.0f));\n\n        if (!VEHICLE::GET_IS_VEHICLE_ENGINE_RUNNING(g_playerVehicle)) {\n            float angleOff = -std::clamp(effSteer, -1.0f, 1.0f) * VExt::GetMaxSteeringAngle(g_playerVehicle);\n            VExt::SetSteeringAngle(g_playerVehicle, angleOff);\n        }\n\n        auto boneIdx = ENTITY::GET_ENTITY_BONE_INDEX_BY_NAME(g_playerVehicle, "steeringwheel");'''
+              new = '''    if (g_vehData.mClass == VehicleClass::Car) {\n        if (MemoryPatcher::WheelOnlyMode()) {\n            // b3095 changed the vehicle steering/transmission memory layout.\n            // Feed the wheel directly through GTA's supported control path.\n            SetControlADZAlt(ControlVehicleMoveLeftRight, effSteer, g_settings.Wheel.Steering.AntiDeadZone, false);\n        }\n        else {\n            VExt::SetSteeringInputAngle(g_playerVehicle, -std::clamp(effSteer, -1.0f, 1.0f));\n\n            if (!VEHICLE::GET_IS_VEHICLE_ENGINE_RUNNING(g_playerVehicle)) {\n                float angleOff = -std::clamp(effSteer, -1.0f, 1.0f) * VExt::GetMaxSteeringAngle(g_playerVehicle);\n                VExt::SetSteeringAngle(g_playerVehicle, angleOff);\n            }\n        }\n\n        auto boneIdx = ENTITY::GET_ENTITY_BONE_INDEX_BY_NAME(g_playerVehicle, "steeringwheel");'''
+              if old not in s:
+                  raise SystemExit('DoSteering block not found')
+              s = s.replace(old, new, 1)
+              return s
+          edit('Gears/WheelInput.cpp', patch_wheel)
+
+          edit('ManualTransmission/settings_general.ini', lambda s: s.replace('Enable = true', 'Enable = false', 1))
+
+      - name: Commit patched source
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add Gears/Memory/MemoryPatcher.hpp Gears/Memory/MemoryPatcher.cpp Gears/WheelInput.cpp ManualTransmission/settings_general.ini
+          git commit -m "fix: add GTA 3095+ wheel-only compatibility"
+          git push
