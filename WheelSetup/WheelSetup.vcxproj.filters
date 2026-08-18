@@ -1,0 +1,117 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Gears">
+      <UniqueIdentifier>{cfeffa07-cf11-459a-9f96-f39efd0c9783}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Gears\Input">
+      <UniqueIdentifier>{a671623a-3b91-4453-8df9-a247e062a97a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Gears\Util">
+      <UniqueIdentifier>{637838ec-8fc7-4f51-a973-9e057ca0c265}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Lib">
+      <UniqueIdentifier>{5019c68f-bf1b-4d67-a931-5524a6301447}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\Gears\Util\TimeHelper.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Gears\ScriptSettings.hpp">
+      <Filter>Gears</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Gears\General.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Gears\Input\CarControls.hpp">
+      <Filter>Gears\Input</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Gears\Input\keyboard.h">
+      <Filter>Gears\Input</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Gears\Input\WheelDirectInput.hpp">
+      <Filter>Gears\Input</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Gears\Input\XInputController.hpp">
+      <Filter>Gears\Input</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Gears\Util\Paths.h">
+      <Filter>Gears\Util</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Gears\Util\Logger.hpp">
+      <Filter>Gears\Util</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Gears\Input\NativeController.h">
+      <Filter>Gears\Input</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Gears\Util\SysUtils.h">
+      <Filter>Gears\Util</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Gears\Util\GUID.h">
+      <Filter>Gears\Util</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Gears\Util\Strings.hpp">
+      <Filter>Gears\Util</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Gears\VehicleConfig.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Gears\SettingsCommon.h">
+      <Filter>Gears</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Gears\Util\Timer.h">
+      <Filter>Gears\Util</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\Gears\ScriptSettings.cpp">
+      <Filter>Gears</Filter>
+    </ClCompile>
+    <ClCompile Include="WheelSetup.cpp" />
+    <ClCompile Include="..\Gears\Input\CarControls.cpp">
+      <Filter>Gears\Input</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Gears\Input\keyboard.cpp">
+      <Filter>Gears\Input</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Gears\Input\WheelDirectInput.cpp">
+      <Filter>Gears\Input</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Gears\Input\XInputController.cpp">
+      <Filter>Gears\Input</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Gears\Util\Paths.cpp">
+      <Filter>Gears\Util</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Gears\Util\Logger.cpp">
+      <Filter>Gears\Util</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Gears\Input\NativeController.cpp">
+      <Filter>Gears\Input</Filter>
+    </ClCompile>
+    <ClCompile Include="..\thirdparty\fmt\src\format.cc">
+      <Filter>Lib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Gears\Util\SysUtils.cpp">
+      <Filter>Gears\Util</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Gears\Util\GUID.cpp">
+      <Filter>Gears\Util</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Gears\Util\Strings.cpp">
+      <Filter>Gears\Util</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Gears\VehicleConfig.cpp" />
+    <ClCompile Include="..\Gears\SettingsCommon.cpp">
+      <Filter>Gears</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Gears\Util\Timer.cpp">
+      <Filter>Gears\Util</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>

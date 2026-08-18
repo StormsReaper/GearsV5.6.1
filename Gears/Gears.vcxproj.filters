@@ -1,0 +1,649 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="script.cpp" />
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="ScriptSettings.cpp" />
+    <ClCompile Include="VehicleData.cpp" />
+    <ClCompile Include="Input\keyboard.cpp">
+      <Filter>Input</Filter>
+    </ClCompile>
+    <ClCompile Include="Input\WheelDirectInput.cpp">
+      <Filter>Input</Filter>
+    </ClCompile>
+    <ClCompile Include="Memory\MemoryPatcher.cpp">
+      <Filter>Memory</Filter>
+    </ClCompile>
+    <ClCompile Include="Memory\NativeMemory.cpp">
+      <Filter>Memory</Filter>
+    </ClCompile>
+    <ClCompile Include="Memory\VehicleExtensions.cpp">
+      <Filter>Memory</Filter>
+    </ClCompile>
+    <ClCompile Include="Util\Logger.cpp">
+      <Filter>Util</Filter>
+    </ClCompile>
+    <ClCompile Include="..\thirdparty\GTAVMenuBase\menu.cpp">
+      <Filter>Thirdparty\Menu</Filter>
+    </ClCompile>
+    <ClCompile Include="..\thirdparty\GTAVMenuBase\menucontrols.cpp">
+      <Filter>Thirdparty\Menu</Filter>
+    </ClCompile>
+    <ClCompile Include="..\thirdparty\GTAVMenuBase\menukeyboard.cpp">
+      <Filter>Thirdparty\Menu</Filter>
+    </ClCompile>
+    <ClCompile Include="ScriptMenu.cpp" />
+    <ClCompile Include="..\thirdparty\GTAVMenuBase\menuutils.cpp">
+      <Filter>Thirdparty\Menu</Filter>
+    </ClCompile>
+    <ClCompile Include="..\thirdparty\GTAVMenuBase\menusettings.cpp">
+      <Filter>Thirdparty\Menu</Filter>
+    </ClCompile>
+    <ClCompile Include="Util\Paths.cpp">
+      <Filter>Util</Filter>
+    </ClCompile>
+    <ClCompile Include="..\thirdparty\MiniPID\MiniPID.cpp">
+      <Filter>Thirdparty</Filter>
+    </ClCompile>
+    <ClCompile Include="ScriptHUD.cpp" />
+    <ClCompile Include="ScriptNPC.cpp" />
+    <ClCompile Include="Input\CarControls.cpp">
+      <Filter>Input</Filter>
+    </ClCompile>
+    <ClCompile Include="Input\XInputController.cpp">
+      <Filter>Input</Filter>
+    </ClCompile>
+    <ClCompile Include="Input\NativeController.cpp">
+      <Filter>Input</Filter>
+    </ClCompile>
+    <ClCompile Include="Util\UIUtils.cpp">
+      <Filter>Util</Filter>
+    </ClCompile>
+    <ClCompile Include="Util\GameSound.cpp">
+      <Filter>Util</Filter>
+    </ClCompile>
+    <ClCompile Include="UpdateChecker.cpp">
+      <Filter>Util</Filter>
+    </ClCompile>
+    <ClCompile Include="Compatibility.cpp">
+      <Filter>Lib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\thirdparty\fmt\src\format.cc">
+      <Filter>Thirdparty\fmt</Filter>
+    </ClCompile>
+    <ClCompile Include="Util\FileVersion.cpp">
+      <Filter>Util</Filter>
+    </ClCompile>
+    <ClCompile Include="..\thirdparty\GTAVMenuBase\menumemutils.cpp">
+      <Filter>Thirdparty\Menu</Filter>
+    </ClCompile>
+    <ClCompile Include="VehicleConfig.cpp" />
+    <ClCompile Include="Input\USBNotify.cpp">
+      <Filter>Input</Filter>
+    </ClCompile>
+    <ClCompile Include="Memory\NativeVectors.cpp">
+      <Filter>Memory</Filter>
+    </ClCompile>
+    <ClCompile Include="Memory\VehicleBone.cpp">
+      <Filter>Memory</Filter>
+    </ClCompile>
+    <ClCompile Include="Memory\NativeMatrix.cpp">
+      <Filter>Memory</Filter>
+    </ClCompile>
+    <ClCompile Include="Util\Timer.cpp">
+      <Filter>Util</Filter>
+    </ClCompile>
+    <ClCompile Include="UDPTelemetry\UDPTelemetry.cpp">
+      <Filter>Features\UDP Telemetry</Filter>
+    </ClCompile>
+    <ClCompile Include="..\thirdparty\yaml-cpp\src\binary.cpp">
+      <Filter>Thirdparty\yaml</Filter>
+    </ClCompile>
+    <ClCompile Include="..\thirdparty\yaml-cpp\src\convert.cpp">
+      <Filter>Thirdparty\yaml</Filter>
+    </ClCompile>
+    <ClCompile Include="..\thirdparty\yaml-cpp\src\depthguard.cpp">
+      <Filter>Thirdparty\yaml</Filter>
+    </ClCompile>
+    <ClCompile Include="..\thirdparty\yaml-cpp\src\directives.cpp">
+      <Filter>Thirdparty\yaml</Filter>
+    </ClCompile>
+    <ClCompile Include="..\thirdparty\yaml-cpp\src\emit.cpp">
+      <Filter>Thirdparty\yaml</Filter>
+    </ClCompile>
+    <ClCompile Include="..\thirdparty\yaml-cpp\src\emitfromevents.cpp">
+      <Filter>Thirdparty\yaml</Filter>
+    </ClCompile>
+    <ClCompile Include="..\thirdparty\yaml-cpp\src\emitter.cpp">
+      <Filter>Thirdparty\yaml</Filter>
+    </ClCompile>
+    <ClCompile Include="..\thirdparty\yaml-cpp\src\emitterstate.cpp">
+      <Filter>Thirdparty\yaml</Filter>
+    </ClCompile>
+    <ClCompile Include="..\thirdparty\yaml-cpp\src\emitterutils.cpp">
+      <Filter>Thirdparty\yaml</Filter>
+    </ClCompile>
+    <ClCompile Include="..\thirdparty\yaml-cpp\src\exceptions.cpp">
+      <Filter>Thirdparty\yaml</Filter>
+    </ClCompile>
+    <ClCompile Include="..\thirdparty\yaml-cpp\src\exp.cpp">
+      <Filter>Thirdparty\yaml</Filter>
+    </ClCompile>
+    <ClCompile Include="..\thirdparty\yaml-cpp\src\memory.cpp">
+      <Filter>Thirdparty\yaml</Filter>
+    </ClCompile>
+    <ClCompile Include="..\thirdparty\yaml-cpp\src\node.cpp">
+      <Filter>Thirdparty\yaml</Filter>
+    </ClCompile>
+    <ClCompile Include="..\thirdparty\yaml-cpp\src\node_data.cpp">
+      <Filter>Thirdparty\yaml</Filter>
+    </ClCompile>
+    <ClCompile Include="..\thirdparty\yaml-cpp\src\nodebuilder.cpp">
+      <Filter>Thirdparty\yaml</Filter>
+    </ClCompile>
+    <ClCompile Include="..\thirdparty\yaml-cpp\src\nodeevents.cpp">
+      <Filter>Thirdparty\yaml</Filter>
+    </ClCompile>
+    <ClCompile Include="..\thirdparty\yaml-cpp\src\null.cpp">
+      <Filter>Thirdparty\yaml</Filter>
+    </ClCompile>
+    <ClCompile Include="..\thirdparty\yaml-cpp\src\ostream_wrapper.cpp">
+      <Filter>Thirdparty\yaml</Filter>
+    </ClCompile>
+    <ClCompile Include="..\thirdparty\yaml-cpp\src\parse.cpp">
+      <Filter>Thirdparty\yaml</Filter>
+    </ClCompile>
+    <ClCompile Include="..\thirdparty\yaml-cpp\src\parser.cpp">
+      <Filter>Thirdparty\yaml</Filter>
+    </ClCompile>
+    <ClCompile Include="..\thirdparty\yaml-cpp\src\regex_yaml.cpp">
+      <Filter>Thirdparty\yaml</Filter>
+    </ClCompile>
+    <ClCompile Include="..\thirdparty\yaml-cpp\src\scanner.cpp">
+      <Filter>Thirdparty\yaml</Filter>
+    </ClCompile>
+    <ClCompile Include="..\thirdparty\yaml-cpp\src\scanscalar.cpp">
+      <Filter>Thirdparty\yaml</Filter>
+    </ClCompile>
+    <ClCompile Include="..\thirdparty\yaml-cpp\src\scantag.cpp">
+      <Filter>Thirdparty\yaml</Filter>
+    </ClCompile>
+    <ClCompile Include="..\thirdparty\yaml-cpp\src\scantoken.cpp">
+      <Filter>Thirdparty\yaml</Filter>
+    </ClCompile>
+    <ClCompile Include="..\thirdparty\yaml-cpp\src\simplekey.cpp">
+      <Filter>Thirdparty\yaml</Filter>
+    </ClCompile>
+    <ClCompile Include="..\thirdparty\yaml-cpp\src\singledocparser.cpp">
+      <Filter>Thirdparty\yaml</Filter>
+    </ClCompile>
+    <ClCompile Include="..\thirdparty\yaml-cpp\src\stream.cpp">
+      <Filter>Thirdparty\yaml</Filter>
+    </ClCompile>
+    <ClCompile Include="..\thirdparty\yaml-cpp\src\tag.cpp">
+      <Filter>Thirdparty\yaml</Filter>
+    </ClCompile>
+    <ClCompile Include="..\thirdparty\yaml-cpp\src\contrib\graphbuilder.cpp">
+      <Filter>Thirdparty\yaml</Filter>
+    </ClCompile>
+    <ClCompile Include="..\thirdparty\yaml-cpp\src\contrib\graphbuilderadapter.cpp">
+      <Filter>Thirdparty\yaml</Filter>
+    </ClCompile>
+    <ClCompile Include="Util\Color.cpp">
+      <Filter>Util</Filter>
+    </ClCompile>
+    <ClCompile Include="Input\NativeInput.cpp">
+      <Filter>Input</Filter>
+    </ClCompile>
+    <ClCompile Include="Util\Strings.cpp">
+      <Filter>Util</Filter>
+    </ClCompile>
+    <ClCompile Include="Util\GUID.cpp">
+      <Filter>Util</Filter>
+    </ClCompile>
+    <ClCompile Include="Util\ScriptUtils.cpp">
+      <Filter>Util</Filter>
+    </ClCompile>
+    <ClCompile Include="Util\SysUtils.cpp">
+      <Filter>Util</Filter>
+    </ClCompile>
+    <ClCompile Include="BlockableControls.cpp" />
+    <ClCompile Include="AWD.cpp">
+      <Filter>Features\AWD</Filter>
+    </ClCompile>
+    <ClCompile Include="AtcuGearbox.cpp">
+      <Filter>Features\Gearbox ATCU</Filter>
+    </ClCompile>
+    <ClCompile Include="AtcuLogic.cpp">
+      <Filter>Features\Gearbox ATCU</Filter>
+    </ClCompile>
+    <ClCompile Include="CustomSteering.cpp">
+      <Filter>Features\Input</Filter>
+    </ClCompile>
+    <ClCompile Include="WheelInput.cpp">
+      <Filter>Features\Input</Filter>
+    </ClCompile>
+    <ClCompile Include="Misc.cpp">
+      <Filter>Features</Filter>
+    </ClCompile>
+    <ClCompile Include="DrivingAssists.cpp">
+      <Filter>Features</Filter>
+    </ClCompile>
+    <ClCompile Include="StartingAnimation.cpp">
+      <Filter>Features</Filter>
+    </ClCompile>
+    <ClCompile Include="SteeringAnim.cpp">
+      <Filter>Features</Filter>
+    </ClCompile>
+    <ClCompile Include="ManualTransmission.cpp">
+      <Filter>API</Filter>
+    </ClCompile>
+    <ClCompile Include="Util\AddonSpawnerCache.cpp">
+      <Filter>Util</Filter>
+    </ClCompile>
+    <ClCompile Include="InputConfiguration.cpp" />
+    <ClCompile Include="LaunchControl.cpp">
+      <Filter>Features\Assists</Filter>
+    </ClCompile>
+    <ClCompile Include="SettingsCommon.cpp" />
+    <ClCompile Include="CruiseControl.cpp">
+      <Filter>Features\Assists</Filter>
+    </ClCompile>
+    <ClCompile Include="SpeedLimiter.cpp">
+      <Filter>Features</Filter>
+    </ClCompile>
+    <ClCompile Include="ScriptMenuUtils.cpp" />
+    <ClCompile Include="Dashboard.cpp">
+      <Filter>Features</Filter>
+    </ClCompile>
+    <ClCompile Include="GearRattle.cpp">
+      <Filter>Features</Filter>
+    </ClCompile>
+    <ClCompile Include="Textures.cpp">
+      <Filter>Features</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="script.h" />
+    <ClInclude Include="..\thirdparty\ScriptHookV_SDK\inc\main.h">
+      <Filter>Thirdparty\ScriptHookV</Filter>
+    </ClInclude>
+    <ClInclude Include="..\thirdparty\ScriptHookV_SDK\inc\enums.h">
+      <Filter>Thirdparty\ScriptHookV</Filter>
+    </ClInclude>
+    <ClInclude Include="..\thirdparty\ScriptHookV_SDK\inc\natives.h">
+      <Filter>Thirdparty\ScriptHookV</Filter>
+    </ClInclude>
+    <ClInclude Include="..\thirdparty\ScriptHookV_SDK\inc\types.h">
+      <Filter>Thirdparty\ScriptHookV</Filter>
+    </ClInclude>
+    <ClInclude Include="ScriptSettings.hpp" />
+    <ClInclude Include="VehicleData.hpp" />
+    <ClInclude Include="Input\keyboard.h">
+      <Filter>Input</Filter>
+    </ClInclude>
+    <ClInclude Include="Input\WheelDirectInput.hpp">
+      <Filter>Input</Filter>
+    </ClInclude>
+    <ClInclude Include="Memory\MemoryPatcher.hpp">
+      <Filter>Memory</Filter>
+    </ClInclude>
+    <ClInclude Include="Memory\NativeMemory.hpp">
+      <Filter>Memory</Filter>
+    </ClInclude>
+    <ClInclude Include="Memory\VehicleExtensions.hpp">
+      <Filter>Memory</Filter>
+    </ClInclude>
+    <ClInclude Include="Util\Logger.hpp">
+      <Filter>Util</Filter>
+    </ClInclude>
+    <ClInclude Include="..\thirdparty\GTAVMenuBase\menu.h">
+      <Filter>Thirdparty\Menu</Filter>
+    </ClInclude>
+    <ClInclude Include="..\thirdparty\GTAVMenuBase\menucontrols.h">
+      <Filter>Thirdparty\Menu</Filter>
+    </ClInclude>
+    <ClInclude Include="..\thirdparty\GTAVMenuBase\menukeyboard.h">
+      <Filter>Thirdparty\Menu</Filter>
+    </ClInclude>
+    <ClInclude Include="..\thirdparty\simpleini\SimpleIni.h">
+      <Filter>Thirdparty</Filter>
+    </ClInclude>
+    <ClInclude Include="..\thirdparty\GTAVMenuBase\menuutils.h">
+      <Filter>Thirdparty\Menu</Filter>
+    </ClInclude>
+    <ClInclude Include="..\thirdparty\GTAVMenuBase\menusettings.h">
+      <Filter>Thirdparty\Menu</Filter>
+    </ClInclude>
+    <ClInclude Include="Memory\Offsets.hpp">
+      <Filter>Memory</Filter>
+    </ClInclude>
+    <ClInclude Include="Util\Paths.h">
+      <Filter>Util</Filter>
+    </ClInclude>
+    <ClInclude Include="Util\MathExt.h">
+      <Filter>Util</Filter>
+    </ClInclude>
+    <ClInclude Include="Memory\Versions.h">
+      <Filter>Memory</Filter>
+    </ClInclude>
+    <ClInclude Include="..\thirdparty\MiniPID\MiniPID.h">
+      <Filter>Thirdparty</Filter>
+    </ClInclude>
+    <ClInclude Include="Input\CarControls.hpp">
+      <Filter>Input</Filter>
+    </ClInclude>
+    <ClInclude Include="Input\XInputController.hpp">
+      <Filter>Input</Filter>
+    </ClInclude>
+    <ClInclude Include="Input\NativeController.h">
+      <Filter>Input</Filter>
+    </ClInclude>
+    <ClInclude Include="Memory\VehicleFlags.h">
+      <Filter>Memory</Filter>
+    </ClInclude>
+    <ClInclude Include="Constants.h" />
+    <ClInclude Include="Util\UIUtils.h">
+      <Filter>Util</Filter>
+    </ClInclude>
+    <ClInclude Include="Util\Color.h">
+      <Filter>Util</Filter>
+    </ClInclude>
+    <ClInclude Include="Util\GameSound.h">
+      <Filter>Util</Filter>
+    </ClInclude>
+    <ClInclude Include="Util\MiscEnums.h">
+      <Filter>Util</Filter>
+    </ClInclude>
+    <ClInclude Include="Memory\PatternInfo.h">
+      <Filter>Memory\Patching</Filter>
+    </ClInclude>
+    <ClInclude Include="Memory\Patcher.h">
+      <Filter>Memory\Patching</Filter>
+    </ClInclude>
+    <ClInclude Include="UpdateChecker.h">
+      <Filter>Util</Filter>
+    </ClInclude>
+    <ClInclude Include="..\thirdparty\curl\curl.h">
+      <Filter>Thirdparty\curl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\thirdparty\curl\curlver.h">
+      <Filter>Thirdparty\curl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\thirdparty\curl\easy.h">
+      <Filter>Thirdparty\curl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\thirdparty\curl\mprintf.h">
+      <Filter>Thirdparty\curl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\thirdparty\curl\multi.h">
+      <Filter>Thirdparty\curl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\thirdparty\curl\stdcheaders.h">
+      <Filter>Thirdparty\curl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\thirdparty\curl\system.h">
+      <Filter>Thirdparty\curl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\thirdparty\curl\typecheck-gcc.h">
+      <Filter>Thirdparty\curl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\thirdparty\curl\urlapi.h">
+      <Filter>Thirdparty\curl</Filter>
+    </ClInclude>
+    <ClInclude Include="Compatibility.h">
+      <Filter>Lib</Filter>
+    </ClInclude>
+    <ClInclude Include="Util\FileVersion.h">
+      <Filter>Util</Filter>
+    </ClInclude>
+    <ClInclude Include="..\thirdparty\GTAVMenuBase\menumemutils.hpp">
+      <Filter>Thirdparty\Menu</Filter>
+    </ClInclude>
+    <ClInclude Include="VehicleConfig.h" />
+    <ClInclude Include="Input\USBNotify.h">
+      <Filter>Input</Filter>
+    </ClInclude>
+    <ClInclude Include="Memory\VehicleBone.h">
+      <Filter>Memory</Filter>
+    </ClInclude>
+    <ClInclude Include="Memory\NativeVectors.h">
+      <Filter>Memory</Filter>
+    </ClInclude>
+    <ClInclude Include="Memory\NativeMatrix.h">
+      <Filter>Memory</Filter>
+    </ClInclude>
+    <ClInclude Include="Util\ValueTimer.h">
+      <Filter>Util</Filter>
+    </ClInclude>
+    <ClInclude Include="Util\Timer.h">
+      <Filter>Util</Filter>
+    </ClInclude>
+    <ClInclude Include="..\thirdparty\GTAVDashHook\DashHook\DashHook.h">
+      <Filter>Thirdparty\ExtScriptDependencies</Filter>
+    </ClInclude>
+    <ClInclude Include="UDPTelemetry\TelemetryPacket.h">
+      <Filter>Features\UDP Telemetry</Filter>
+    </ClInclude>
+    <ClInclude Include="UDPTelemetry\Socket.h">
+      <Filter>Features\UDP Telemetry</Filter>
+    </ClInclude>
+    <ClInclude Include="UDPTelemetry\UDPTelemetry.h">
+      <Filter>Features\UDP Telemetry</Filter>
+    </ClInclude>
+    <ClInclude Include="..\thirdparty\yaml-cpp\src\collectionstack.h">
+      <Filter>Thirdparty\yaml</Filter>
+    </ClInclude>
+    <ClInclude Include="..\thirdparty\yaml-cpp\src\directives.h">
+      <Filter>Thirdparty\yaml</Filter>
+    </ClInclude>
+    <ClInclude Include="..\thirdparty\yaml-cpp\src\emitterstate.h">
+      <Filter>Thirdparty\yaml</Filter>
+    </ClInclude>
+    <ClInclude Include="..\thirdparty\yaml-cpp\src\emitterutils.h">
+      <Filter>Thirdparty\yaml</Filter>
+    </ClInclude>
+    <ClInclude Include="..\thirdparty\yaml-cpp\src\exp.h">
+      <Filter>Thirdparty\yaml</Filter>
+    </ClInclude>
+    <ClInclude Include="..\thirdparty\yaml-cpp\src\indentation.h">
+      <Filter>Thirdparty\yaml</Filter>
+    </ClInclude>
+    <ClInclude Include="..\thirdparty\yaml-cpp\src\nodebuilder.h">
+      <Filter>Thirdparty\yaml</Filter>
+    </ClInclude>
+    <ClInclude Include="..\thirdparty\yaml-cpp\src\nodeevents.h">
+      <Filter>Thirdparty\yaml</Filter>
+    </ClInclude>
+    <ClInclude Include="..\thirdparty\yaml-cpp\src\ptr_vector.h">
+      <Filter>Thirdparty\yaml</Filter>
+    </ClInclude>
+    <ClInclude Include="..\thirdparty\yaml-cpp\src\regex_yaml.h">
+      <Filter>Thirdparty\yaml</Filter>
+    </ClInclude>
+    <ClInclude Include="..\thirdparty\yaml-cpp\src\regeximpl.h">
+      <Filter>Thirdparty\yaml</Filter>
+    </ClInclude>
+    <ClInclude Include="..\thirdparty\yaml-cpp\src\scanner.h">
+      <Filter>Thirdparty\yaml</Filter>
+    </ClInclude>
+    <ClInclude Include="..\thirdparty\yaml-cpp\src\scanscalar.h">
+      <Filter>Thirdparty\yaml</Filter>
+    </ClInclude>
+    <ClInclude Include="..\thirdparty\yaml-cpp\src\scantag.h">
+      <Filter>Thirdparty\yaml</Filter>
+    </ClInclude>
+    <ClInclude Include="..\thirdparty\yaml-cpp\src\setting.h">
+      <Filter>Thirdparty\yaml</Filter>
+    </ClInclude>
+    <ClInclude Include="..\thirdparty\yaml-cpp\src\singledocparser.h">
+      <Filter>Thirdparty\yaml</Filter>
+    </ClInclude>
+    <ClInclude Include="..\thirdparty\yaml-cpp\src\stream.h">
+      <Filter>Thirdparty\yaml</Filter>
+    </ClInclude>
+    <ClInclude Include="..\thirdparty\yaml-cpp\src\streamcharsource.h">
+      <Filter>Thirdparty\yaml</Filter>
+    </ClInclude>
+    <ClInclude Include="..\thirdparty\yaml-cpp\src\stringsource.h">
+      <Filter>Thirdparty\yaml</Filter>
+    </ClInclude>
+    <ClInclude Include="..\thirdparty\yaml-cpp\src\tag.h">
+      <Filter>Thirdparty\yaml</Filter>
+    </ClInclude>
+    <ClInclude Include="..\thirdparty\yaml-cpp\src\token.h">
+      <Filter>Thirdparty\yaml</Filter>
+    </ClInclude>
+    <ClInclude Include="..\thirdparty\yaml-cpp\src\contrib\graphbuilderadapter.h">
+      <Filter>Thirdparty\yaml</Filter>
+    </ClInclude>
+    <ClInclude Include="Input\NativeInput.h">
+      <Filter>Input</Filter>
+    </ClInclude>
+    <ClInclude Include="Util\Strings.hpp">
+      <Filter>Util</Filter>
+    </ClInclude>
+    <ClInclude Include="Util\GUID.h">
+      <Filter>Util</Filter>
+    </ClInclude>
+    <ClInclude Include="Util\ScriptUtils.h">
+      <Filter>Util</Filter>
+    </ClInclude>
+    <ClInclude Include="Util\SysUtils.h">
+      <Filter>Util</Filter>
+    </ClInclude>
+    <ClInclude Include="ScriptHUD.h" />
+    <ClInclude Include="BlockableControls.h" />
+    <ClInclude Include="AWD.h">
+      <Filter>Features\AWD</Filter>
+    </ClInclude>
+    <ClInclude Include="AtcuGearbox.h">
+      <Filter>Features\Gearbox ATCU</Filter>
+    </ClInclude>
+    <ClInclude Include="AtcuLogic.h">
+      <Filter>Features\Gearbox ATCU</Filter>
+    </ClInclude>
+    <ClInclude Include="CustomSteering.h">
+      <Filter>Features\Input</Filter>
+    </ClInclude>
+    <ClInclude Include="WheelInput.h">
+      <Filter>Features\Input</Filter>
+    </ClInclude>
+    <ClInclude Include="DrivingAssists.h">
+      <Filter>Features</Filter>
+    </ClInclude>
+    <ClInclude Include="Misc.h">
+      <Filter>Features</Filter>
+    </ClInclude>
+    <ClInclude Include="StartingAnimation.h">
+      <Filter>Features</Filter>
+    </ClInclude>
+    <ClInclude Include="SteeringAnim.h">
+      <Filter>Features</Filter>
+    </ClInclude>
+    <ClInclude Include="ManualTransmission.h">
+      <Filter>API</Filter>
+    </ClInclude>
+    <ClInclude Include="Util\AddonSpawnerCache.h">
+      <Filter>Util</Filter>
+    </ClInclude>
+    <ClInclude Include="InputConfiguration.h" />
+    <ClInclude Include="LaunchControl.h">
+      <Filter>Features\Assists</Filter>
+    </ClInclude>
+    <ClInclude Include="SettingsCommon.h" />
+    <ClInclude Include="CruiseControl.h">
+      <Filter>Features\Assists</Filter>
+    </ClInclude>
+    <ClInclude Include="SpeedLimiter.h">
+      <Filter>Features</Filter>
+    </ClInclude>
+    <ClInclude Include="Util\Materials.h">
+      <Filter>Util</Filter>
+    </ClInclude>
+    <ClInclude Include="resource.h" />
+    <ClInclude Include="..\thirdparty\GTAVCustomTorqueMap\GTAVCustomTorqueMap\CustomTorqueMap.hpp">
+      <Filter>Thirdparty\ExtScriptDependencies</Filter>
+    </ClInclude>
+    <ClInclude Include="Input\DirectInputError.h">
+      <Filter>Input</Filter>
+    </ClInclude>
+    <ClInclude Include="ScriptMenuUtils.h" />
+    <ClInclude Include="Dashboard.h">
+      <Filter>Features</Filter>
+    </ClInclude>
+    <ClInclude Include="GearRattle.h">
+      <Filter>Features</Filter>
+    </ClInclude>
+    <ClInclude Include="Textures.h">
+      <Filter>Features</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Memory">
+      <UniqueIdentifier>{09af856a-dd6f-4abb-aa1d-57e413924122}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Util">
+      <UniqueIdentifier>{6656e964-569c-448b-ac00-d586f48acb8a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Input">
+      <UniqueIdentifier>{b0a5ce99-5818-4a5c-8c45-00ae3b8148c4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Thirdparty">
+      <UniqueIdentifier>{d0a967a3-e709-4563-beec-8bb1bc9d1711}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Memory\Patching">
+      <UniqueIdentifier>{a0e6c9f3-7e78-430a-abb7-39e38e87d266}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Thirdparty\curl">
+      <UniqueIdentifier>{86991d65-e172-479c-8c09-1e4747551205}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Thirdparty\fmt">
+      <UniqueIdentifier>{ed736439-0f02-423b-8962-64053e0896cd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Thirdparty\yaml">
+      <UniqueIdentifier>{e0f6edc3-ef31-40c5-9dc2-78a926d1ce40}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Features">
+      <UniqueIdentifier>{aa74f79e-2406-4d3e-b2fd-ab2f038b4a60}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Features\AWD">
+      <UniqueIdentifier>{eeb838bb-6c3f-48c2-83f1-7219ca5f765b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Features\Gearbox ATCU">
+      <UniqueIdentifier>{67921eb8-a051-4146-b09f-0c0801bba34b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Features\Input">
+      <UniqueIdentifier>{78585d2c-5798-4b05-bba1-f904dc2f4df9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Lib">
+      <UniqueIdentifier>{05abafde-5223-4634-93cd-877f6570d6a7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="API">
+      <UniqueIdentifier>{4f7ab765-680d-4dea-97a5-76c12b1f5444}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Features\UDP Telemetry">
+      <UniqueIdentifier>{84c60810-1f1b-46a9-a810-08f9629ad9a6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Features\Assists">
+      <UniqueIdentifier>{5e2df4c6-f8bf-478a-acb8-d56a2a71eb54}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Thirdparty\Menu">
+      <UniqueIdentifier>{d318979d-d544-4b16-9e26-6bec9234be3e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Thirdparty\ScriptHookV">
+      <UniqueIdentifier>{01012e73-37b7-4874-b66a-9390e9a83264}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Thirdparty\ExtScriptDependencies">
+      <UniqueIdentifier>{3bca7d29-ffa2-4bd2-9d7c-d6a61e15c7d9}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <Library Include="..\thirdparty\curl\libcurl.lib">
+      <Filter>Thirdparty\curl</Filter>
+    </Library>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="Gears.rc" />
+  </ItemGroup>
+</Project>
