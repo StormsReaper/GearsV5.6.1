@@ -15,6 +15,8 @@ int gearboxAttempts = 0;
 
 bool Error = false;
 
+bool WheelOnlyModeEnabled = false;
+
 // When disabled, shift-up doesn't trigger.
 PatternInfo shiftUp;
 Patcher ShiftUpPatcher("Gears: Shift Up", shiftUp, true);
@@ -65,6 +67,9 @@ PatternInfo throttleControl;
 Patcher ThrottleControlPatcher("Throttle: Throttle control", throttleControl);
 
 void SetPatterns(int version) {
+    // GTA b3095 changed the vehicle transmission internals. For newer builds
+    // we intentionally run only the wheel/input/FFB portion of Gears.
+    WheelOnlyModeEnabled = version > G_VER_1_0_2802_0;
     // Valid for 877 to 1290
     shiftUp = PatternInfo("\x66\x89\x13\xB8\x05\x00\x00\x00", "xxxxxxxx", 
         { 0x66, 0x89, 0x13 });
@@ -143,6 +148,11 @@ void SetPatterns(int version) {
 }
 
 bool Test() {
+    if (WheelOnlyModeEnabled) {
+        logger.Write(INFO, "[Compat] Wheel-only mode active; skipping legacy memory patch tests");
+        return true;
+    }
+
     bool success = true;
     success &= 0 != ShiftUpPatcher.Test();
     success &= 0 != ShiftDownPatcher.Test();
@@ -159,6 +169,10 @@ bool Test() {
 }
 
 bool ApplyGearboxPatches() {
+    if (WheelOnlyModeEnabled) {
+        return true;
+    }
+
     if (gearboxAttempts > maxAttempts) {
         return false;
     }
@@ -243,6 +257,9 @@ bool RevertGearboxPatches() {
 }
 
 bool PatchSteeringAssist() {
+    if (WheelOnlyModeEnabled) {
+        return false;
+    }
     return SteeringAssistPatcher.Patch();
 }
 
@@ -251,6 +268,9 @@ bool RestoreSteeringAssist() {
 }
 
 bool PatchSteeringControl() {
+    if (WheelOnlyModeEnabled) {
+        return false;
+    }
     return SteeringControlPatcher.Patch();
 }
 
@@ -280,6 +300,10 @@ bool PatchThrottleControl() {
 
 bool RestoreThrottleControl() {
     return ThrottleControlPatcher.Restore();
+}
+
+bool WheelOnlyMode() {
+    return WheelOnlyModeEnabled;
 }
 }
 

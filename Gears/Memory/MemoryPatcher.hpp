@@ -3,6 +3,7 @@
 
 namespace MemoryPatcher {
 void SetPatterns(int version);
+bool WheelOnlyMode();
 bool Test();
 
 /*

@@ -13,6 +13,7 @@
 #include "Util/UIUtils.h"
 
 #include "Memory/VehicleExtensions.hpp"
+#include "Memory/MemoryPatcher.hpp"
 #include "Memory/Offsets.hpp"
 #include "Memory/VehicleBone.h"
 
@@ -511,6 +512,13 @@ void WheelInput::CheckButtons() {
         return;
     }
 
+    // b3095+ uses GTA's native transmission. Disable Gears' custom gearbox
+    // before update_manual_transmission() runs, so wheel pedals use the normal
+    // GTA control path instead of the obsolete memory-backed pedal logic.
+    if (MemoryPatcher::WheelOnlyMode()) {
+        g_settings.MTOptions.Enable = false;
+    }
+
     checkVehicleInputButtons();
     checkCameraButtons();
     checkRadioButtons();
@@ -548,11 +556,18 @@ void WheelInput::DoSteering() {
     bool altInputs = hasAltInputs(g_playerVehicle);
 
     if (g_vehData.mClass == VehicleClass::Car) {
-        VExt::SetSteeringInputAngle(g_playerVehicle, -std::clamp(effSteer, -1.0f, 1.0f));
+        if (MemoryPatcher::WheelOnlyMode()) {
+            // b3095 changed the vehicle steering/transmission memory layout.
+            // Feed the wheel directly through GTA's supported control path.
+            SetControlADZAlt(ControlVehicleMoveLeftRight, effSteer, g_settings.Wheel.Steering.AntiDeadZone, false);
+        }
+        else {
+            VExt::SetSteeringInputAngle(g_playerVehicle, -std::clamp(effSteer, -1.0f, 1.0f));
 
-        if (!VEHICLE::GET_IS_VEHICLE_ENGINE_RUNNING(g_playerVehicle)) {
-            float angleOff = -std::clamp(effSteer, -1.0f, 1.0f) * VExt::GetMaxSteeringAngle(g_playerVehicle);
-            VExt::SetSteeringAngle(g_playerVehicle, angleOff);
+            if (!VEHICLE::GET_IS_VEHICLE_ENGINE_RUNNING(g_playerVehicle)) {
+                float angleOff = -std::clamp(effSteer, -1.0f, 1.0f) * VExt::GetMaxSteeringAngle(g_playerVehicle);
+                VExt::SetSteeringAngle(g_playerVehicle, angleOff);
+            }
         }
 
         auto boneIdx = ENTITY::GET_ENTITY_BONE_INDEX_BY_NAME(g_playerVehicle, "steeringwheel");
