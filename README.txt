@@ -1,19 +1,21 @@
 Manual Transmission | Steering wheel support
 ============================================
 
-Extensive user guides are at the following locations:
+For in-depth information about the script, check Docs/README.pdf or
+  https://oversteerengineering.com/5-gears-readme
+For a full changelog, check Docs/changelog.pdf
 
-Online: https://github.com/E66666666/GTAVManualTransmission/blob/master/doc/README.md
-Offline: Docs/README.pdf
+Requirements
+============
 
-Changelog:
-Online: https://github.com/E66666666/GTAVManualTransmission/blob/master/doc/changelog.md
-Offline: Docs/changelog.pdf
+Grand Theft Auto V
+ScriptHookV
+A valid license (See https://oversteerengineering.com/licgen-readme)
 
 Installation
 ============
 1. Put Gears.asi and the folder ManualTransmission in your GTA V folder.
-  a. The ManualTransmission folder may also be placed at %appdata%\ikt\ManualTransmission.
+  a. The ManualTransmission folder may also be placed at %localappdata%\ikt\ManualTransmission.
 2. Choose your settings with the in-game menu (See "Menu opening").
 3. Wheel users: Go into Wheel Settings to set up your steering wheel (analog, ffb, buttons).
 
@@ -24,7 +26,7 @@ Updating
 
 Menu opening
 ============
-Press [{ on a US-ANSI keyboard. For other layouts, check the layout.
+Press [{ on a US-ANSI keyboard. For other layouts, consider changing the default button.
 Press Right Shoulder and B on an Xbox controller.
 Alternatively, enter the "mtmenu" cheat.
 
@@ -35,10 +37,10 @@ Redistribution
 
 This archive is ONLY uploaded to the following locations:
 
-GTA5-Mods.com: https://www.gta5-mods.com/scripts/manual-transmission-ikt
-GitHub.com: https://github.com/E66666666/GTAVManualTransmission/releases
+Patreon: https://www.patreon.com/ikt
+GitHub.com: https://github.com/ikt32/scripts-updates/releases
 
 REDISTRIBUTION OF THIS ARCHIVE IS NOT ALLOWED
 MODIFICATION OF THIS ARCHIVE IS NOT ALLOWED
 
-(C) ikt 2023
+(C) ikt 2026
